@@ -1,4 +1,4 @@
-for i, demo in pairs({"matrix", "worm", "rain", "xmas", "firework", "ozdemo"}) do
+for i, demo in pairs({"worm", "rain", "xmas", "firework", "ozdemo", "testcurs"}) do
     target(demo)
         set_kind("binary")
         add_files(demo ..".c")

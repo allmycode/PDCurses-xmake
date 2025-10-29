@@ -1,7 +1,10 @@
 add_requires("libsdl2")
+add_requires("libsdl2_ttf")
 
 target("backend")
     set_kind("static")
     add_files("*.c")
     add_deps("pdcurses")
     add_packages("libsdl2")
+    add_packages("libsdl2_ttf")
+    add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")

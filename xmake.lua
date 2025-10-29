@@ -3,16 +3,25 @@ option("backend")
     set_default("wincon")
 option_end()
 
-option("DEBUG", {default = false})
+option("DEBUG")
+    set_default(false)
     add_cflags("-g", "-Wall", "-DPDCDEBUG")
 
-option("DLL", {default = false})
+option("DLL")
+    set_default(false)
 
-option("WIDE", {default = false})
+option("WIDE")
+    set_default(false)
     add_cflags("-DPDC_WIDE")
 
-option("UTF8", {default = false})
+option("UTF8")
+    set_default(false)
     add_cflags("-DPDC_FORCE_UTF8")
+
+option("INFOEX")
+   set_default(false)
+   add_cflags("-DHAVE_NO_INFOEX")
+
 
 includes("pdcurses")
 
@@ -25,3 +34,4 @@ if is_config("backend", "sdl2") then
 end
 
 includes("demos")
+includes("test")

@@ -7,3 +7,4 @@ target("backend")
     end
     add_files("pdc*.c")
     add_deps("pdcurses")
+    add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")

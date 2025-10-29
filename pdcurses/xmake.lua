@@ -6,4 +6,4 @@ target("pdcurses")
         add_syslinks("user32")
         add_syslinks("Advapi32")
     end
-    add_cflags("-DHAVE_NO_INFOEX", {tools = "gcc"})
+    add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")

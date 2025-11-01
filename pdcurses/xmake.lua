@@ -7,3 +7,4 @@ target("pdcurses")
         add_syslinks("Advapi32")
     end
     add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")
+    add_deps("backend")

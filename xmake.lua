@@ -2,7 +2,7 @@ option("backend")
     set_values("wincon", "sdl2")
     set_default("wincon")
 option_end()
-
+add_requires("zlib")
 option("DEBUG")
     set_default(false)
     add_cflags("-g", "-Wall", "-DPDCDEBUG")
@@ -34,4 +34,3 @@ if is_config("backend", "sdl2") then
 end
 
 includes("demos")
-includes("test")

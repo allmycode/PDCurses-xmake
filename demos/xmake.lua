@@ -14,13 +14,15 @@ target("demo.tuidemo")
     add_deps("pdcurses")
     add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")
 
-for _, test in pairs({"hanoi", "knight", "ncurses", "firstlast", "tclock", "blue", "bs", "gdc", "newdemo", "view"}) do
-    target("test."..test)
-        set_kind("binary")
-        add_files("../test/"..test..".c")
-        add_deps("backend")
-        add_deps("pdcurses")
-        add_includedirs(".")
-        add_includedirs("../test")
-        add_cflags("-DHAVE_MATH_H", "-DHAVE_MATH_FUNCS")
+if os.exists("../test") then
+    for _, test in pairs({"hanoi", "knight", "ncurses", "firstlast", "tclock", "blue", "bs", "gdc", "newdemo", "view"}) do
+        target("test."..test)
+            set_kind("binary")
+            add_files("../test/"..test..".c")
+            add_deps("backend")
+            add_deps("pdcurses")
+            add_includedirs(".")
+            add_includedirs("../test")
+            add_cflags("-DHAVE_MATH_H", "-DHAVE_MATH_FUNCS")
+    end
 end

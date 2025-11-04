@@ -1,4 +1,4 @@
-for _, demo in pairs({"worm", "rain", "xmas", "firework", "ozdemo", "testcurs"}) do
+for _, demo in pairs({"worm", "rain", "xmas", "firework", "ozdemo", "testcurs", "matrix2"}) do
     target("demo."..demo)
         set_kind("binary")
         add_files(demo ..".c")
@@ -13,8 +13,9 @@ target("demo.tuidemo")
     add_deps("backend")
     add_deps("pdcurses")
     add_options("DEBUG","DLL","WIDE","UTF8","INFOEX")
+target_end()
 
-if os.exists("../test") then
+if is_plat("mingw") and os.exists("../test") then
     for _, test in pairs({"hanoi", "knight", "ncurses", "firstlast", "tclock", "blue", "bs", "gdc", "newdemo", "view"}) do
         target("test."..test)
             set_kind("binary")

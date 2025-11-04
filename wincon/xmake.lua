@@ -1,5 +1,5 @@
 
-target("backend")
+target("pdcurses-wincon-backend")
     if has_config("DLL") then
         set_kind("shared")
     else

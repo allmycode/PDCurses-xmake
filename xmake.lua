@@ -25,12 +25,15 @@ option("INFOEX")
 
 includes("pdcurses")
 
+backend = ""
 if is_config("backend", "wincon") then
     includes("wincon")
+    backend = "wincon"
 end
 
 if is_config("backend", "sdl2") then
     includes("sdl2")
+    backend = "sdl2"
 end
 
 includes("demos")

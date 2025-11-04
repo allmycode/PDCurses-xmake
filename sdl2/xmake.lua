@@ -4,7 +4,7 @@ if has_config("WIDE") or has_config("UTF8") then
     add_requires("libsdl2_ttf")
 end
 
-target("backend")
+target("pdcurses-sdl2-backend")
     set_kind("static")
     add_files("*.c")
     add_includedirs("..", {public = true})
